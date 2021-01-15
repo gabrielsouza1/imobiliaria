@@ -1,3 +1,14 @@
+
+-- INSTALL LARAVEL --
+
+composer install
+
+copy .env.example .env
+
+php artisan key:generate
+
+php artisan serve
+
 Escopo do Projeto
 
 Controle Imobiliário
