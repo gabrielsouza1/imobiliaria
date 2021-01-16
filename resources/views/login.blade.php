@@ -173,7 +173,7 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary my-4">Entrar</button>
+                  <button type="button" class="btn btn-primary my-4"><a href="/proprietario">Entrar</a></button>
                 </div>
               </form>
             </div>
