@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
   <link rel="stylesheet" href="{{ url('assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
-  <link rel="stylesheet" href="{{ url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <link rel="stylesheet" href="{{ url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}">
   <!-- Argon CSS -->
-  <link rel="stylesheet" href="{{ url('assets/css/argon.css?v=1.1.0')}}" type="text/css">
+  <link rel="stylesheet" href="{{ url('assets/css/argon.css?v=1.1.0')}}" >
 </head>
 <body>
 <!-- Sidenav -->
@@ -21,7 +21,7 @@
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="../pages/dashboards/dashboard.html">
-          <img src=".{{('assets/img/brand/blue.png')}}" class="navbar-brand-img" alt="...">
+          <img src=".{{('assets/img/brand/blue.png')}}" class="navbar-brand-img">
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -63,13 +63,13 @@
               <div class="collapse" id="navbar-examples">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="proprietario/cadastrar.html" class="nav-link">Cadastro de Proprietario</a>
+                    <a href="{{ route('proprietario.create')}}" class="nav-link">Cadastro de Proprietario</a>
                   </li>
                   <li class="nav-item">
-                    <a href="proprietario/lista.html" class="nav-link">Lista de Proprietario</a>
+                    <a href="{{ route('proprietario.index')}}" class="nav-link">Lista de Proprietario</a>
                   </li>
                                     <li class="nav-item">
-                    <a href="proprietario/relatorio.html" class="nav-link">Relatorio</a>
+                    <a href="{{ route('proprietario.relatorio')}}" class="nav-link">Relatorio</a>
                   </li>
                 </ul>
               </div>

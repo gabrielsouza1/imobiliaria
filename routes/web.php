@@ -1,21 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//Direcionamento do controller do proprietario, configuração das rotas.
+use App\Http\Controllers\ProprietarioController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//Rotas dos Proprietarios
+//Relatorio
+Route::get('/proprietario/relatorio',[ProprietarioController::class, 'relatorio'])->name('proprietario.relatorio');
+//Criar novo Proprietario
+Route::get('/proprietario/create', [ProprietarioController::class, 'create'])->name('proprietario.create');
+//Editar Proprietario
+Route::get('/proprietario/edit', [ProprietarioController::class, 'edit'])->name('proprietario.edit');
+//Modal das informações do Proprietario
+Route::get('/proprietario/modal', [ProprietarioController::class, 'modal'])->name('proprietario.modal');
+//Pesquisar/Filtrar os proprietarios cadastrados
+Route::get('/proprietario/search', [ProprietarioController::class, 'search'])->name('proprietario.search');
+//Pagina inicial
+Route::get('/proprietario', [ProprietarioController::class, 'index'])->name('proprietario.index');
+
 
 Route::get('/', function () {
     return view('login');
-});
-Route::get('adm', function (){
-    return view('index');
 });
