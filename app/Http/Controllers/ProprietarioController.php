@@ -10,36 +10,29 @@ class ProprietarioController extends Controller
     {
         return view( 'proprietario.index');
     }
-
+     
     //redicionamento para paginação create
 
     public function create()
     {
         return view('proprietario.create');
     }
-    public function insert(Request $request){
-              $proprietario = new proprietario();
-              $proprietario ->nome = $request->nome;
-              $proprietario -> email = $request->email;
-              $proprietario -> endereco = $request->endereco;
-              $proprietario ->complemento = $request->complemento;
-              $proprietario ->bairro = $request->bairro;
-              $proprietario ->cidade = $request->cidade;
-              $proprietario ->telefone = $request->telefone;
-              $proprietario ->whatsapp = $request->whatsapp;
-              $proprietario ->cpf = $request->cpf;
-              $proprietario ->cnpj = $request->cnpj;
-              $proprietario ->rg = $request->rg;
-              $proprietario ->data_nascimento = $request->data_nascimento;
-
-              $proprietario = propritario::where(' cpf', '=',$request->cpf)->orwhere('email', '=', $request->email)->count();
-              if($proprietario > 0){
-                  echo "<script language='javascript'> window.alert('Proprietario já Cadastrado!') </script>";
-                  return view('proprietario.index');
-              }
-              $tabela = save();
-              return redirect()->route('proprietario.index');
-            } 
+    public function insert(){
+        $request->validate([
+            'nome'=>'required',
+            'email'=>'required|email',
+            'endereco'=>'required',
+            'complemento'=>'required',
+            'bairro'=>'required',
+            'cidade'=>'required',
+            'telefone'=>'required',
+            'whatsapp'=>'required',
+            'cpf'=>'required',
+            'cnpj'=>'required',
+            'rg'=>'required',
+            'data_nascimento'=>'required'
+        ]);
+    }
     public function edit()
     {
         return view('proprietario.edit');
