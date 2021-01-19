@@ -180,7 +180,7 @@
           </div>
           <div class="row mt-3">
             <div class="col-6">
-              <a href="#" class="text-light"><small>Esqueceu a senha?</small></a>
+              <a href="{{ route('proprietario.esqueceu')}}" class="text-light"><small>Esqueceu a senha?</small></a>
             </div>
            <!-- <div class="col-6 text-right">
               <a href="#" class="text-light"><small>Create new account</small></a>

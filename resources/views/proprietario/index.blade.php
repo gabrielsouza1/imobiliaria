@@ -40,129 +40,23 @@
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
+              
               <tr>
                 <th>Nome</th>
                 <th>CPF</th>
-                <th>Data de Nascimento</th>
-                <th>Naturidade</th>
-                <th>Ações</th>
+                <th>RG</th>
+                <th>CNPJ</th>
+                <th>WhatsApp</th>
+                <!--<th>Ações</th>-->
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="table-user">
-                  <img src="{{('assets/img/theme/team-1.jpg')}}" class="avatar rounded-circle mr-3">
-                  <b>John Michael</b>
-                </td>
-                <td>
-                  <span class="text-muted">Masculino</span>
-                </td>
-                <td>
-                  <a href="#!" class="font-weight-bold">10/09/1990</a>
-                </td>
-                <td>
-                  <span class="text-muted">São Paulo</span>
-                </td>
-                <td class="table-actions">
-                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Editar usuario">
-                    <i class="fas fa-user-edit"></i>
-                  </a>
-                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Deletar usuario">
-                    <i class="fas fa-trash"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-user">
-                  <img src="{{('assets/img/theme/team-2.jpg')}}" class="avatar rounded-circle mr-3">
-                  <b>Alex Smith</b>
-                </td>
-                <td>
-                  <span class="text-muted">Masculino</span>
-                </td>
-                <td>
-                  <a href="#!" class="font-weight-bold">08/09/1990</a>
-                </td>
-                 <td>
-                  <span class="text-muted">São Paulo</span>
-                </td>
-                <td class="table-actions">
-                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Editar usuario">
-                    <i class="fas fa-user-edit"></i>
-                  </a>
-                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Deletar Usuario">
-                    <i class="fas fa-trash"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-user">
-                  <img src="{{('assets/img/theme/team-3.jpg')}}" class="avatar rounded-circle mr-3">
-                  <b>Samantha Ivy</b>
-                </td>
-                <td>
-                  <span class="text-muted">Feminino</span>
-                </td>
-                <td>
-                  <a href="#!" class="font-weight-bold">30/08/1978</a>
-                </td>
-                                <td>
-                  <span class="text-muted">São Paulo</span>
-                </td>
-                <td class="table-actions">
-                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Editar usuario">
-                    <i class="fas fa-user-edit"></i>
-                  </a>
-                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Deletar Usuario">
-                    <i class="fas fa-trash"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-user">
-                  <img src="{{('assets/img/theme/team-1.jpg')}}" class="avatar rounded-circle mr-3">
-                  <b>John Michael</b>
-                </td>
-                <td>
-                  <span class="text-muted">Masculino</span>
-                </td>
-                <td>
-                  <a href="#!" class="font-weight-bold">02/02/1995</a>
-                </td>
-                                <td>
-                  <span class="text-muted">Brasilia</span>
-                </td>
-                <td class="table-actions">
-                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Editar usuario">
-                    <i class="fas fa-user-edit"></i>
-                  </a>
-                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Deletar Usuario">
-                    <i class="fas fa-trash"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-user">
-                  <img src="{{('assets/img/theme/team-2.jpg')}}" class="avatar rounded-circle mr-3">
-                  <b>John Michael</b>
-                </td>
-                <td>
-                  <span class="text-muted">Masculino</span>
-                </td>
-                <td>
-                  <a href="#!" class="font-weight-bold">Argon Dashboard PRO</a>
-                </td>
-                                <td>
-                  <span class="text-muted">Bahia</span>
-                </td>
-                <td class="table-actions">
-                  <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Editar usuario">
-                    <i class="fas fa-user-edit"></i>
-                  </a>
-                  <a href="#!" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Deletar Usuario">
-                    <i class="fas fa-trash"></i>
-                  </a>
-                </td>
+                <td>Nome</td>
+                <td>Email</td>
+                <td>RG</td>
+                <td>CNPJ</td>
+                <td>WhatsApp</td>
               </tr>
             </tbody>
           </table>
