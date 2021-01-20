@@ -8,7 +8,7 @@ use App\Http\Controllers\ProprietarioController;
 //Relatorio
 Route::get('/proprietario/relatorio',[ProprietarioController::class, 'relatorio'])->name('proprietario.relatorio');
 //Criar novo Proprietario
-Route::get('/proprietario/create', [ProprietarioController::class, 'add', 'create'])->name('proprietario.create');
+Route::get('/proprietario/create', [ProprietarioController::class,  'create'])->name('proprietario.create');
 //Editar Proprietario
 Route::get('/proprietario/edit', [ProprietarioController::class, 'edit'])->name('proprietario.edit');
 //Modal das informações do Proprietario
@@ -18,7 +18,7 @@ Route::get('/proprietario/search', [ProprietarioController::class, 'search'])->n
 //Pagina inicial
 Route::get('/proprietario', [ProprietarioController::class, 'index'])->name('proprietario.index');
 Route::get('/proprietario/esqueceu', [ProprietarioController::class, 'index'])->name('proprietario.esqueceu');
-Route::post('add', [ProprietarioController::class, 'insert']);
+Route::post('add', [ProprietarioController::class, 'addDate']);
 
 Route::get('/', function () {
     return view('login');

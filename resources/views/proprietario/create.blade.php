@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
+  <title>Argon Dashboard PRO - Premium Bootstrap 4 Admin Template</title>
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url('assets/img/brand/favicon.png')}}" type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href="{{ url('assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{ url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
+  <!-- Page plugins -->
+  <link rel="stylesheet" href="{{ url('assets/vendor/select2/dist/css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{ url('assets/vendor/quill/dist/quill.core.css')}}">
+  <!-- Argon CSS -->
+  <link rel="stylesheet" href="{{ url('assets/css/argon.css?v=1.1.0')}}" type="text/css">
+</head>
 
 <div class="header bg-primary pb-6">
       <div class="container-fluid">
@@ -36,8 +58,9 @@
                 <h3 class="mb-0">Cadastro de Inquilino</h3>
               </div>
               <div class="card-body">
-                <form action="insert" method="post">
-                @csrf
+            
+                <form action="add" method="post">
+                {{ csrf_field() }}
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -189,12 +212,12 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
                           </div>
-                          <input class="form-control datepicker" placeholder="Dats Nascimento" type="text" value="06/20/2018" name="data_nascimento" value="{{ old('data_nascimento')}}">>
+                          <input class="form-control datepicker" placeholder="Dats Nascimento" type="text" value="06/20/2018" name="data_nascimento" value="{{ old('data_nascimento')}}">
                           <span style="color">@error('data_nascimento') {{$message }} @enderror</span>
                           <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                           </div>
-                          <button type="submit">Entrar</butotn>
+                          <button type="submit" class="btn btn-primary">Entrar</butotn>
                         </div>
                       </div>
                     </div>
