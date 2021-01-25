@@ -18,7 +18,7 @@ Route::get('/proprietario/search', [ProprietarioController::class, 'search'])->n
 //Pagina inicial
 Route::get('/proprietario', [ProprietarioController::class, 'index'])->name('proprietario.index');
 Route::get('/proprietario/esqueceu', [ProprietarioController::class, 'index'])->name('proprietario.esqueceu');
-Route::post('add', [ProprietarioController::class, 'addDate']);
+Route::post('/proprietario', [ProprietarioController::class, 'store'])->name('proprietario.store');
 
 Route::get('/', function () {
     return view('login');

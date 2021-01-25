@@ -20,217 +20,39 @@
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{ url('assets/css/argon.css?v=1.1.0')}}" type="text/css">
 </head>
+    <h1 class="text-center text-3xl uppercase font-black my-4">Proprietario</h1>
 
-<div class="header bg-primary pb-6">
-      <div class="container-fluid">
-        <div class="header-body">
-          <div class="row align-items-center py-4">
-            <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Cadastro de Inquilino</h6>
-              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Cadastro de Inquilino</li>
-                  @if(Session::get('sucess'))
-      <div class="alert alert-sucess">
-           {{ Session::get('sucess')}}
-      </div>
-@endif
-@if(Session::get('fail'))
-      <div class="alert alert-danger">
-           {{ Session::get('fail')}}
-      </div>
-@endif
-                </ol>
-              </nav>
-            </div>
+    <div class="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12 mx-auto">
+        <form action="{{ route('proprietario.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
+<input type="text" name="nome" id="nome" placeholder="Nome" value="{{ $proprietario->nome ?? old('nome') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="data_nasacimento" id="data_nasacimento" placeholder="Data de Nascimento" value="{{ $proprietario->data_nasacimento ?? old('data_nasacimento') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="naturalidade" id="naturalidade" placeholder="Naturalidade" value="{{ $proprietario->naturalidade?? old('naturalidade') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="nacionalidade" id="nacionalidade" placeholder="Nacionalidade" value="{{ $proprietario->nacionalidade ?? old('nacionalidade') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="file" name="foto" id="foto" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="numero" id="numero" placeholder="Numero" value="{{ $proprietario->numero ?? old('numero') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="complemento" id="complemento" placeholder="Complemento" value="{{ $proprietario->complemento ?? old('complemento') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="bairro" id="bairro" placeholder="Bairro" value="{{ $proprietario->bairro ?? old('bairro') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="cidade" id="cidade" placeholder="Cidade" value="{{ $proprietario->rua ?? old('Cidade') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="estado" id="estado" placeholder="Estado" value="{{ $proprietario->rua ?? old('estado') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="cep" id="cep" placeholder="CEP" value="{{ $proprietario->rua ?? old('cep') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="cpf" id="cpf" placeholder="CPF" value="{{ $proprietario->rua ?? old('cpf') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="rg" id="rg" placeholder="RG" value="{{ $proprietario->rua ?? old('rg') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="rg_emissor" id="rg_emissor" placeholder="RG Emissor" value="{{ $proprietario->rg_emissor ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="email" name="email" id="email" placeholder="E-mail" value="{{ $proprietario->email ?? old('email') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="telefone" id="telefone" placeholder="Telefone" value="{{ $proprietario->telefone ?? old('telefone') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="whatsapp" id="whatsapp" placeholder="WhatsApp" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="observacoes_internas" id="observacoes_internas" placeholder="Rua" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="outras_observacoes" id="outras_observacoes" placeholder="Rua" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="cadastradoem" id="cadastradoem" placeholder="Rua" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="cadastrapor" id="cadastrapo" placeholder="Rua" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="alteradoem" id="rua" placeholder="Rua" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="alteradopor" id="rua" placeholder="Rua" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="ativo" id="rua" placeholder="Rua" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="rua" id="rua" placeholder="Rua" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+<input type="text" name="rua" id="rua" placeholder="Rua" value="{{ $proprietario->rua ?? old('rua') }}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
 
-          </div>
-        </div>
-      </div>
+<button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">Enviar</button>
+
+        </form>
     </div>
-    <div class="container-fluid mt--6">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card-wrapper">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="mb-0">Cadastro de Inquilino</h3>
-              </div>
-              <div class="card-body">
-            
-                <form action="add" method="post">
-                {{ csrf_field() }}
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                          </div>
-                          <input class="form-control" placeholder="Nome Completo" type="text" name="nome" value="{{ old('nome')}}" >
-                          <span style="color">@error('nome') {{$message }} @enderror</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                          </div>
-                          <input class="form-control" placeholder="E-mail" type="email" name="email" value="{{ old('email')}}">
-                          <span style="color">@error('email') {{$message }} @enderror</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <input class="form-control" placeholder="Endereço" type="text" name="endereco" value="{{ old('endereco')}}">
-                          <span style="color">@error('endereco') {{$message }} @enderror</span>
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-map-marker"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <input class="form-control" placeholder="Complemento" type="text" name="complemento" value="{{ old('complemento')}}">
-                          <span style="color">@error('complemento') {{$message }} @enderror</span>
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-eye"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
-                          </div>
-                          <input class="form-control" placeholder="Bairro" type="text" name="bairro" value="{{ old('bairro')}}">
-                          <span style="color">@error('bairro') {{$message }} @enderror</span>
-
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
-                          </div>
-                          <input class="form-control" placeholder="Cidade" type="text" name="cidade" value="{{ old('cidade')}}">
-                          <span style="color">@error('cidade') {{$message }} @enderror</span>
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                                        <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
-                          </div>
-                          <input class="form-control" placeholder="Telefone" type="text" name="telefone" value="{{ old('telefone')}}">
-                          <span style="color">@error('telefone') {{$message }} @enderror</span>
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                                        <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
-                          </div>
-                        <input class="form-control" placeholder="WhatsApp" type="text" name="whatsapp" value="{{ old('whatsapp')}}">
-                        <span style="color">@error('whatsapp') {{$message }} @enderror</span>
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                                        <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
-                          </div>
-                          <input class="form-control" placeholder="CPF" type="text" name="cpf"  value="{{ old('cpf')}}">
-                          <span style="color">@error('cpf') {{$message }} @enderror</span>
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                                        <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
-                          </div>
-                          <input class="form-control" placeholder="CNPJ" type="text" name="cnpj" value="{{ old('cnpj')}}">
-                          <span style="color">@error('cnpj') {{$message }} @enderror</span>
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                                        <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
-                          </div>
-                          <input class="form-control" placeholder="RG" type="text" name="rg" value="{{ old('rg')}}">
-                          <span style="color">@error('rg') {{$message }} @enderror</span>
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                                        <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group input-group-merge">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
-                          </div>
-                          <input class="form-control datepicker" placeholder="Dats Nascimento" type="text" value="06/20/2018" name="data_nascimento" value="{{ old('data_nascimento')}}">
-                          <span style="color">@error('data_nascimento') {{$message }} @enderror</span>
-                          <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                          </div>
-                          <button type="submit" class="btn btn-primary">Entrar</butotn>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>

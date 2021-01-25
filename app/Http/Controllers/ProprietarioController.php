@@ -18,39 +18,26 @@ class ProprietarioController extends Controller
     {
         return view('proprietario.create');
     }
-     function addDate(Request $request){
-        $request->validate([
-            'nome'=>'required',
-            'email'=>'required|email',
-            'endereco'=>'required',
-            'complemento'=>'required',
-            'bairro'=>'required',
-            'cidade'=>'required',
-            'telefone'=>'required',
-            'whatsapp'=>'required',
-            'cpf'=>'required',
-            'cnpj'=>'required',
-            'rg'=>'required',
-            'data_nascimento'=>'required'
-        ]);
-        $query = DB::table('proprietario')->insert([
-            'nome'=>$request->input('nome'),
-            'email'=>$request->input('email'),
-            'endereco'=>$request->input('endereco'),
-            'bairro'=>$request->input('bairro'),
-            'telefone'=>$request->input('telefone'),
-            'whatsapp'=>$request->input('whatsapp'),
-            'cpf'=>$request->input('cpf'),
-            'cnpj'=>$request->input('cnpj'),
-            'rg'=>$request->input('rg'),
-            'data_nascimento'=>$request->input('data_nascimento')
-        ]);
-        if($query){
-            return back()->with('Sucesso', 'Proprietario cadastrado com sucesso');
-        }else{
-            return back()->with('fail');
-        };
+
+    public function store(StoreUpdatePost $request)
+    {
+        $data = $request->all();
+
+        if ($request->image->isValid()) {
+
+            $nameFile = Str::of($request->title)->slug('-') . '.' .$request->image->getClientOriginalExtension();
+
+            $foto = $request->image->storeAs('proprietario', $nameFile);
+            $data['image'] = $foto;
+        }
+
+        Post::create($data);
+
+        return redirect()
+                ->route('proprietario.index')
+                ->with('message', 'Post criado com sucesso');;
     }
+
     public function edit()
     {
         return view('proprietario.edit');
